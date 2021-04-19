@@ -108,7 +108,8 @@ public class MinimumBinaryHeap {
 	 * @return True if heap is empty and false otherwise.
 	 */
 	public boolean isEmpty() {
-		return heap.isEmpty();
+		return heap.size() == 0;
+
 	}
 	
 	/**
