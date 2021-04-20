@@ -96,6 +96,16 @@ public class MinimumBinaryHeapTest {
 		boolean b2 = heap.remove(3);
 		assertEquals(false, b2);
 	}
+	@Test
+	public void removeRoot(){
+		heap.add(2);
+		heap.add(3);
+		heap.add(5);
+		boolean b1 = heap.remove(2);
+
+		assertEquals(true,b1);
+
+	}
 
 
 
