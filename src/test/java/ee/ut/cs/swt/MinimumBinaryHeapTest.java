@@ -41,6 +41,10 @@ public class MinimumBinaryHeapTest {
 		int min = heap.exractMin();
 		assertEquals(1, min);
 	}
+	@Test(expected = IllegalArgumentException.class)
+	public void extractMinTestEmptyHeap()  {
+		heap.exractMin();
+	}
 	
 	@Test
 	public void swapTest() {
