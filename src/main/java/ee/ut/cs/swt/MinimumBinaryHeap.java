@@ -93,15 +93,14 @@ public class MinimumBinaryHeap {
 	 */
 	public boolean remove(int element) {
 		int index = heap.indexOf(element);
-		if (index == heap.size()-1) {
-			heap.remove(heap.size()-1);
+		if (heap.size()==0 || !heap.contains(element)  )  {
 			return false;
+		} else {
+			heap.set(index, heap.get(heap.size()-1));
+			heap.remove(heap.size()-1);
+			bubbleDown(index);
+			return true;
 		}
-		
-		heap.set(index, heap.get(heap.size()-1));
-		heap.remove(heap.size()-1);
-		bubbleDown(index);
-		return true;
 	}
 	
 	/**

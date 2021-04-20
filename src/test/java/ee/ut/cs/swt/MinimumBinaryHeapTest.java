@@ -71,9 +71,33 @@ public class MinimumBinaryHeapTest {
 		heap.add(3);
 		heap.add(2);
 		boolean b1 = heap.remove(3);
-
 		assertEquals(true, b1);
 	}
+	@Test
+	public void removeTestWrongElement() {
+		heap.add(5);
+		heap.add(3);
+		heap.add(2);
+		boolean b1 = heap.remove(4);
+		assertEquals(false, b1);
+	}
+	@Test
+	public void removeTestFromEmptyHeap() {
+		boolean b1 = heap.remove(3);
+		assertEquals(false, b1);
+	}
+	@Test
+	public void removeSameTwice(){
+		heap.add(5);
+		heap.add(3);
+		heap.add(2);
+		boolean b1 = heap.remove(3);
+		assertEquals(true, b1);
+		boolean b2 = heap.remove(3);
+		assertEquals(false, b2);
+	}
+
+
 
 	@Test
 	public void isEmptyTest() {
@@ -86,5 +110,6 @@ public class MinimumBinaryHeapTest {
 		heap.add(3);
 		assertEquals(false, heap.isEmpty());
 	}
+
 }
 
