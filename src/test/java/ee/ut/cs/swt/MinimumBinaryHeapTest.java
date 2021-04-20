@@ -65,7 +65,7 @@ public class MinimumBinaryHeapTest {
 		heap.swap(1, 2);
 		assertEquals(5, heap.getArray().get(0), 0);
 		assertEquals(13, heap.getArray().get(1), 0);
-		assertEquals(8, heap.getArray().get(2), 0);
+
 	}
 	
 	@Test
@@ -96,6 +96,17 @@ public class MinimumBinaryHeapTest {
 		heap.add(2);
 		boolean b1 = heap.remove(3);
 		assertEquals(true, b1);
+	}
+	@Test
+	public void removeTest2Times() {
+		heap.add(5);
+		heap.add(3);
+		heap.add(2);
+		heap.add(8);
+		boolean b1 = heap.remove(3);
+		assertEquals(true, b1);
+		boolean b2 = heap.remove(8);
+		assertEquals(true, b2);
 	}
 	@Test
 	public void removeTestWrongElement() {
