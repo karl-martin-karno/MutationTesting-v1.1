@@ -28,10 +28,21 @@ public class MinimumBinaryHeapTest {
 	public void minHeapifyTest() {
 		heap.minHeapify(result);
 		assertEquals(4, heap.getArray().get(0), 0);
-		assertEquals(5, heap.getArray().get(1), 0);
-		assertEquals(10, heap.getArray().get(2), 0);
+		assertEquals(8, heap.getArray().get(1), 0);
 
 	}
+
+	@Test
+	public void minHeapifyTestWithSameNumbers() {
+		heap.add(5);
+		heap.add(5);
+		heap.add(3);
+		heap.add(3);
+		assertEquals(3, heap.getArray().get(0), 0);
+		assertEquals(3, heap.getArray().get(1), 0);
+
+	}
+
 	
 	@Test
 	public void extractMinTest() {
@@ -65,8 +76,17 @@ public class MinimumBinaryHeapTest {
 		heap.add(8);
 		heap.add(12);
 		assertEquals(4, heap.getArray().get(0), 0);
-		assertEquals(5, heap.getArray().get(1), 0);
-		assertEquals(10, heap.getArray().get(2), 0);
+		assertEquals(8, heap.getArray().get(1), 0);
+
+	}
+	@Test
+	public void addTestWithCertainNumbers(){
+		heap.add(5);
+		heap.add(4);
+		heap.add(3);
+		heap.add(2);
+		assertEquals(3, heap.getArray().get(1), 0);
+		assertEquals(5, heap.getArray().get(3), 0);
 	}
 	
 	@Test

@@ -60,7 +60,7 @@ public class MinimumBinaryHeap {
 	
 	public void bubbleUp(int pos) {
 		if (pos == 0) return;
-		int parent = (pos)/2;
+		int parent = (pos-1)/2;
 		while (heap.get(pos) < heap.get(parent)) {
 			swap(pos, parent);
 			pos = parent;
