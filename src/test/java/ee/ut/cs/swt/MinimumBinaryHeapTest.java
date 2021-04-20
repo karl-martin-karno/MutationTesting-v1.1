@@ -23,6 +23,22 @@ public class MinimumBinaryHeapTest {
 		result.add(8);
 		result.add(12);
 	}
+	@Test
+	public void extractMinTest() {
+		heap.add(7);
+		heap.add(1);
+		heap.add(6);
+		int min = heap.exractMin();
+		assertEquals(1, min);
+	}
+	@Test
+	public void removeTest() {
+		heap.add(5);
+		heap.add(3);
+		heap.add(2);
+		boolean b1 = heap.remove(3);
+		assertEquals(true, b1);
+	}
 	
 	@Test
 	public void minHeapifyTest() {
@@ -31,7 +47,6 @@ public class MinimumBinaryHeapTest {
 		assertEquals(8, heap.getArray().get(1), 0);
 
 	}
-
 	@Test
 	public void minHeapifyTestWithSameNumbers() {
 		heap.add(5);
@@ -43,15 +58,6 @@ public class MinimumBinaryHeapTest {
 
 	}
 
-	
-	@Test
-	public void extractMinTest() {
-		heap.add(7);
-		heap.add(1);
-		heap.add(6);
-		int min = heap.exractMin();
-		assertEquals(1, min);
-	}
 	@Test(expected = IllegalArgumentException.class)
 	public void extractMinTestEmptyHeap()  {
 		heap.exractMin();
@@ -83,7 +89,6 @@ public class MinimumBinaryHeapTest {
 		assertEquals(13, heap.getArray().get(2), 0);
 
 	}
-	
 	@Test
 	public void addTest() {
 		heap.add(10);
@@ -93,7 +98,6 @@ public class MinimumBinaryHeapTest {
 		heap.add(12);
 		assertEquals(4, heap.getArray().get(0), 0);
 		assertEquals(8, heap.getArray().get(1), 0);
-
 	}
 	@Test
 	public void addTestWithCertainNumbers(){
@@ -103,15 +107,6 @@ public class MinimumBinaryHeapTest {
 		heap.add(2);
 		assertEquals(3, heap.getArray().get(1), 0);
 		assertEquals(5, heap.getArray().get(3), 0);
-	}
-	
-	@Test
-	public void removeTest() {
-		heap.add(5);
-		heap.add(3);
-		heap.add(2);
-		boolean b1 = heap.remove(3);
-		assertEquals(true, b1);
 	}
 
 	@Test
@@ -168,7 +163,6 @@ public class MinimumBinaryHeapTest {
 		assertEquals(2,heap.getArray().size(),0);
 
 	}
-
 	@Test
 	public void isEmptyTest() {
 		heap = new MinimumBinaryHeap();
