@@ -56,7 +56,13 @@ public class MinimumBinaryHeapTest {
 	public void extractMinTestEmptyHeap()  {
 		heap.exractMin();
 	}
-	
+
+	@Test
+	public void extractLastElementStanding() {
+		heap.add(1);
+		int min = heap.exractMin();
+		assertEquals(1, min);
+	}
 	@Test
 	public void swapTest() {
 		heap.add(5);
@@ -65,6 +71,16 @@ public class MinimumBinaryHeapTest {
 		heap.swap(1, 2);
 		assertEquals(5, heap.getArray().get(0), 0);
 		assertEquals(13, heap.getArray().get(1), 0);
+
+	}
+	@Test
+	public void swapSameTest(){
+		heap.add(5);
+		heap.add(13);
+		heap.add(13);
+		heap.swap(1, 2);
+		assertEquals(13, heap.getArray().get(1), 0);
+		assertEquals(13, heap.getArray().get(2), 0);
 
 	}
 	
@@ -97,6 +113,7 @@ public class MinimumBinaryHeapTest {
 		boolean b1 = heap.remove(3);
 		assertEquals(true, b1);
 	}
+
 	@Test
 	public void removeTestSmallHeap() {
 		heap.add(2);

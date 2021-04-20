@@ -71,7 +71,7 @@ public class MinimumBinaryHeap {
 	public void bubbleDown(int pos) {
 		int leftChild = (2*pos) + 1;
 		int rightChild = (2*pos) + 2;
-		int min = pos;
+		int min;
 		int maxSize = heap.size();
 		if (rightChild >=maxSize) {
 			if (leftChild >= maxSize)
