@@ -98,6 +98,15 @@ public class MinimumBinaryHeapTest {
 		assertEquals(true, b1);
 	}
 	@Test
+	public void removeTestSmallHeap() {
+		heap.add(2);
+		heap.add(3);
+		boolean b1 = heap.remove(2);
+		assertEquals(true, b1);
+		int arv = heap.getArray().get(0);
+		assertEquals(arv, heap.getArray().get(0),0);
+	}
+	@Test
 	public void removeTest2Times() {
 		heap.add(5);
 		heap.add(3);
