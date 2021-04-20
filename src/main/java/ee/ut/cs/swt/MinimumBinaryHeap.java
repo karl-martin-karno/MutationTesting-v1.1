@@ -73,13 +73,14 @@ public class MinimumBinaryHeap {
 		int leftChild = 2*pos + 1;
 		int rightChild = 2*pos + 2;
 		int min = pos;
+		int maxSize = heap.size();
 
 		// when the left child is smaller
-		if (leftChild < heap.size() && heap.get(leftChild) < heap.get(min)) {
+		if (leftChild < maxSize && heap.get(leftChild) < heap.get(min)) {
 			min = leftChild;
 		}
 		// when the right child is smaller
-		if (rightChild < heap.size() && heap.get(rightChild) < heap.get(min)) {
+		if (rightChild < maxSize && heap.get(rightChild) < heap.get(min)) {
 			min = rightChild;
 		}
 		if (min != pos) {
@@ -96,7 +97,7 @@ public class MinimumBinaryHeap {
 	 */
 	public boolean remove(int element) {
 		int index = heap.indexOf(element);
-		if (index <0) {
+		if (index < 0 ) {
 			return false;
 		}
 		heap.set(index, heap.get(heap.size()-1));
