@@ -168,8 +168,6 @@ public class MinimumBinaryHeapTest {
 
 	}
 
-
-
 	@Test
 	public void isEmptyTest() {
 		heap = new MinimumBinaryHeap();
@@ -180,6 +178,17 @@ public class MinimumBinaryHeapTest {
 		heap = new MinimumBinaryHeap();
 		heap.add(3);
 		assertEquals(false, heap.isEmpty());
+	}
+	@Test
+	public void bubbleDownTest() {
+		heap.add(2);
+		heap.add(3);
+		heap.add(8);
+		heap.add(8);
+		heap.add(8);
+		heap.bubbleDown(0);
+		assertEquals(2,heap.getArray().get(0),0);
+
 	}
 
 }
