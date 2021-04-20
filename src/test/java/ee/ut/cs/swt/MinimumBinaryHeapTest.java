@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class MinimumBinaryHeapTest {
 	
@@ -165,6 +165,7 @@ public class MinimumBinaryHeapTest {
 		boolean b1 = heap.remove(2);
 
 		assertEquals(true,b1);
+		assertEquals(2,heap.getArray().size(),0);
 
 	}
 
@@ -188,8 +189,34 @@ public class MinimumBinaryHeapTest {
 		heap.add(8);
 		heap.bubbleDown(0);
 		assertEquals(2,heap.getArray().get(0),0);
-
 	}
+	@Test
+	public void removeRootAndCheckIfItIsChanged () {
+		heap.add(12);
+		heap.add(13);
+		heap.add(88);
+		heap.add(99);
+		heap.add(16);
+		heap.add(17);
+		heap.add(18);
+		heap.remove(12);
+		assertEquals(16,heap.getArray().get(1),0);
+		assertEquals(88,heap.getArray().get(5),0);
+	}
+	@Test
+	public void extractminRootAndCheckIfItIsChanged() {
+		heap.add(12);
+		heap.add(13);
+		heap.add(88);
+		heap.add(99);
+		heap.add(16);
+		heap.add(17);
+		heap.add(18);
+		int b1 = heap.exractMin();
+		assertEquals(12, b1,0);
+		assertNotEquals(18, (int) heap.getArray().get(0));
+	}
+
 
 }
 
