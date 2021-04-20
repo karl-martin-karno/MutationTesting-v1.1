@@ -80,5 +80,11 @@ public class MinimumBinaryHeapTest {
 		heap = new MinimumBinaryHeap();
 		assertEquals(true, heap.isEmpty());
 	}
+	@Test
+	public void isNotEmpty() {
+		heap = new MinimumBinaryHeap();
+		heap.add(3);
+		assertEquals(false, heap.isEmpty());
+	}
 }
 
