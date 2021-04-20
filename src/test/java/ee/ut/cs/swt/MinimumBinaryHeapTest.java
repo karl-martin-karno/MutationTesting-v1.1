@@ -217,6 +217,5 @@ public class MinimumBinaryHeapTest {
 		assertNotEquals(18, (int) heap.getArray().get(0));
 	}
 
-
 }
 

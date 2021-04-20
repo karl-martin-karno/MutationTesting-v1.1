@@ -96,16 +96,16 @@ public class MinimumBinaryHeap {
 	 */
 	public boolean remove(int element) {
 		int index = heap.indexOf(element);
-		if (heap.size()==0 || !heap.contains(element)  )  {
+		if (index <0) {
 			return false;
-		} else {
-			heap.set(index, heap.get(heap.size()-1));
-			heap.remove(heap.size()-1);
-			bubbleDown(index);
-			return true;
 		}
+		heap.set(index, heap.get(heap.size()-1));
+		heap.remove(heap.size()-1);
+		bubbleDown(index);
+		return true;
 	}
-	
+
+
 	/**
 	 * @return True if heap is empty and false otherwise.
 	 */
